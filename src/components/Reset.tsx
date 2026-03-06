@@ -11,10 +11,10 @@ export const Reset = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await axios.post('reset', {
+        await axios.post('authentication/reset', {
             token,
             password,
-            password_confirm: passwordConfirm
+            confirm_password: passwordConfirm
         });
 
         setRedirect(true);

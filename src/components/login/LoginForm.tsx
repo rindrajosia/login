@@ -20,8 +20,8 @@ export const LoginForm = ({ loginData, success, setTfaRequired }: Props) => {
         const { data } = await axios.post(
             "authentication/sign-in",
             {
-            email,
-            password,
+              email,
+              password,
             },
             { withCredentials: true }
         );
@@ -41,7 +41,7 @@ export const LoginForm = ({ loginData, success, setTfaRequired }: Props) => {
             );
 
             const url = URL.createObjectURL(qrResponse.data);
-            loginData({ id: data.id, email, password, qrUrl: url });
+            loginData({ id: data.id, email, password, qrUrl: url, refreshToken: data.refreshToken });
             setTfaRequired(true);
         } catch (err: any) {
             success();

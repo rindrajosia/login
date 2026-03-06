@@ -10,6 +10,7 @@ interface LoginDataType {
   email: string;
   password: string;
   qrUrl?: string;
+  refreshToken?: string;
 }
 
 export const Login = () => {
